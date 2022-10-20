@@ -32,7 +32,10 @@ const ProductCard = observer(({ product }: ProductCardProps) => {
         borderLeft: selected ? "2px solid #12B8FF" : "none",
       }}
     >
-      <CardActionArea onClick={handleOnClickProductCard}>
+      <CardActionArea
+        onClick={handleOnClickProductCard}
+        aria-label="product_card_button"
+      >
         <CardContent sx={{ px: 3, py: "14px" }}>
           <Box display="flex" alignItems="center">
             <Box maxWidth={500}>

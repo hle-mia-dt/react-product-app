@@ -18,8 +18,8 @@ export type TProduct = {
   category: string;
   manufacturerUrl: string;
   description: string[];
-  option1: string;
-  option2: string;
+  option1: null | string;
+  option2: null | string;
 };
 
 type State = "idle" | "loading" | "hasData" | "hasError";

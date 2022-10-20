@@ -31,9 +31,8 @@ const Filter = observer(() => {
               checked={value.checked}
               onChange={handleChange}
               inputProps={{
-                "aria-label": "controlled",
+                "aria-label": value.id,
               }}
-              test-id={value.id}
             />
           }
           label={

@@ -17,7 +17,15 @@ test("category checkboxes should be visible", async () => {
 
 test("category checkboxes could be checked", async () => {
   render(<Filter />);
-
-  fireEvent.click(screen.getByTestId("Software_Development"));
-  expect(screen.getByTestId("Software_Development")).toHaveAttribute("checked");
+  [
+    "Software_Development",
+    "Daily_Business",
+    "Text_Editors",
+    "Management_Tools",
+  ].forEach((name) => {
+    const input = screen.getByRole("checkbox", { name });
+    expect(input).not.toBeChecked();
+    fireEvent.click(input);
+    expect(input).toBeChecked();
+  });
 });
